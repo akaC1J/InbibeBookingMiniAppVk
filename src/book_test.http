@@ -1,0 +1,14 @@
+POST http://localhost:8000/api/book
+Content-Type: application/json; charset=utf-8
+
+{
+  "user_id": 123456,
+  "name": "Кирилл",
+  "phone": "+79991234567",
+  "prettyDate": "7 октября",
+  "time": "20:00",
+  "guests": 3
+}
+
+###
+
