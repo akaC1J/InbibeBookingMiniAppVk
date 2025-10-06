@@ -68,7 +68,7 @@ export const Home: FC<HomeProps> = ({id, fetchedUser}) => {
         try {
             const result = await bridge.send('VKWebAppGetPhoneNumber') as VKPhoneNumberResponse;
             if (result.phone_number) {
-                setPhone(result.phone_number);
+                setPhone("+" + result.phone_number);
                 showSnackbar('Номер успешно получен ✅', <Icon24Phone />);
             } else {
                 showSnackbar('Не удалось получить номер', <Icon16ErrorCircleFill color="var(--vkui--color_icon_negative)" />);
