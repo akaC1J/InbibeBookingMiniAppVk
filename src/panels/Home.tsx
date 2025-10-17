@@ -154,7 +154,6 @@ export const Home: FC<HomeProps> = ({id, fetchedUser}) => {
                     guests={guests}
                     onGuestsChange={setGuests}
                     guestsValid={guestsValid}
-                    isFormValid={isFormValid}
                     onSubmit={onSubmit}
                     isSubmitting={isSubmitting}
                 />

@@ -23,7 +23,6 @@ export interface BookingFormProps {
     guests: number,
     onGuestsChange: (n: number) => void,
     guestsValid: boolean,
-    isFormValid: boolean,
     onSubmit: () => void,
     isSubmitting?: boolean
 }
@@ -46,7 +45,6 @@ export const BookingForm: FC<BookingFormProps> = ({
                                                       guests,
                                                       onGuestsChange,
                                                       guestsValid,
-                                                      isFormValid,
                                                       onSubmit,
                                                       isSubmitting
                                                   }) => {
@@ -87,13 +85,11 @@ export const BookingForm: FC<BookingFormProps> = ({
                 max={20}
                 guestsValid={guestsValid}
             />
-
-            <Spacing size={8}/>
             <Button
                 size="l"
                 appearance="accent"
                 onClick={onSubmit}
-                disabled={!isFormValid || isSubmitting}
+                disabled={isSubmitting}
                 before={
                     isSubmitting ? (
                         <Spinner size="s" />
@@ -110,6 +106,18 @@ export const BookingForm: FC<BookingFormProps> = ({
             >
                 {isSubmitting ? "Отправляем..." : "Забронировать"}
             </Button>
+            <Spacing size={6}/>
+            <Footnote
+                style={{
+                    color: 'var(--vkui--color_text_secondary)',
+                    textAlign: 'center',
+                }}
+            >
+                Нажимая кнопку «Забронировать», вы соглашаетесь с
+                {' '}<a href="offer.html" target="_blank" rel="noopener noreferrer">Пользовательским соглашением</a>
+                {' '}и{' '}
+                <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой конфиденциальности</a>.
+            </Footnote>
             <Spacing size={4}/>
             <Separator appearance="primary"/>
             <Footnote
