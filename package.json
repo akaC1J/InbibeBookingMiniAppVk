@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "tunnel": "vk-tunnel --http-protocol=http --host=localhost --port=5173",
     "deploy": "vite build && vk-miniapps-deploy",
+    "deploy:prd": "npm deploy",
+    "deploy:stage": "vite build --mode staging && vk-miniapps-deploy",
+
     "convert": "node scripts/gen-pdf.mjs"
   },
   "dependencies": {

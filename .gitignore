@@ -1,5 +1,7 @@
-/.env
+/.env.production
 /build/
 /node_modules/
 /public/privacy.html
 /public/offer.html
+/.env.production
+/.env.staging
